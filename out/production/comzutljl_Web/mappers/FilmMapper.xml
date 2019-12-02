@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zut.dao.FilmMapper">
+
+    <select id="getFilmById" parameterType="long" resultType="com.zut.entity.Film">
+  SELECT * FROM film WHERE ID = #{id}
+</select>
+    <select id="getListFilm" resultType="com.zut.entity.Film">
+  SELECT * FROM film
+</select>
+    <insert id="addFilm" parameterType="com.zut.entity.Film">
+
+        INSERT INTO film(name,type,imgurl,id,htmlurl) values (#{name},#{type},#{imgurl},#{id},#{htmlurl})
+    </insert>
+</mapper>

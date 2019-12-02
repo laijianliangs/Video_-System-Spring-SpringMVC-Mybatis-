@@ -39,6 +39,7 @@
 
     <dependencies>
 
+        <!--测试单元-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -118,7 +119,6 @@
         </dependency>
 
         <!-- mysql连接 -->
-
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -214,21 +214,21 @@
             <version>${commons-fileupload.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <!-- apache工具类 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+        <!-- jedis -->
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>${jedis.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper -->
+        <!-- 分页插件 pagehelper -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
@@ -237,6 +237,7 @@
 
 
 
+        <!--maven-->
     </dependencies>
     <build>
         <plugins>

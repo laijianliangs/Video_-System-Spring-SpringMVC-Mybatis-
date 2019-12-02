@@ -5,6 +5,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.zut.entity.Film;
 import com.zut.service.FilmService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +18,9 @@ import java.io.IOException;
 
 @Controller
 public class ManagerController {
-
     @Autowired
     private FilmService filmService;
-
+   private static final Logger logger= Logger.getLogger(ManagerController .class);
     /**
      *
      *@ClassDesc:  功能描述：(一般把请求返回的变量放在前面，保证代码的简洁性和可读性)
@@ -76,14 +76,14 @@ public class ManagerController {
         try {
             file.transferTo(targetfile);
         } catch (IOException e) {
-            System.out.println("file faild");
+           logger.error(e);
             return ADDFILM;
         }
         try {
             film.setImgurl(imgName);
             filmService.addFilm(film);//一般在操作数据时都要获取异常，所以要用try catch
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e);
         }
 
         return "redirect:/manager";  //重定向为管理页面
